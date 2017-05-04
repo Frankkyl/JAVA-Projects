@@ -1,4 +1,4 @@
-package test;
+package com.tankgame.test;
 
 import javax.swing.*;
 import java.awt.*;
