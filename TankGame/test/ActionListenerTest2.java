@@ -24,7 +24,7 @@ public class ActionListenerTest2 extends JFrame{
     }
 }
 
-class MyPanel2 extends JPanel implements MouseListener, KeyListener{
+class MyPanel2 extends JPanel implements MouseListener, KeyListener,MouseMotionListener, MouseWheelListener, WindowListener{
     public void paint(Graphics g){
         super.paint(g);
     }
@@ -66,6 +66,56 @@ class MyPanel2 extends JPanel implements MouseListener, KeyListener{
 
     @Override
     public void keyReleased(KeyEvent e) {
+
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseWheelMoved(MouseWheelEvent e) {
+        
+    }
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+        
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
 
     }
 }
