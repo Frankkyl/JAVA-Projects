@@ -70,6 +70,29 @@ class Enemy3 extends Tank3 {
     }
 }
 class Hero3 extends Tank3 {
+
+    Shot shot=null;
+
+    public void shotEnemy(){
+
+        switch(this.direct){
+            case 0:
+                shot=new Shot(x,y-15,0);
+                break;
+            case 1:
+                shot=new Shot(x+15,y,1);
+                break;
+            case 2:
+                shot=new Shot(x,y+15,2);
+                break;
+            case 3:
+                shot=new Shot(x-15,y,3);
+                break;
+        }
+        Thread t=new Thread(shot);
+        t.start();
+
+    }
     public Hero3(int x,int y) {
         super(x,y);
     }
@@ -84,6 +107,49 @@ class Hero3 extends Tank3 {
     }
     public void moveLeft(){
         x-=speed;
+    }
+}
+
+class Shot implements Runnable{
+    int x;
+    int y;
+    int direct;
+    int speed=3;
+    public Shot(int x,int y, int direct){
+        this.x=x;
+        this.y=y;
+        this.direct=direct;
+    }
+
+    @Override
+    public void run() {
+        while(true){
+            try{
+                Thread.sleep(50);
+            }catch (Exception e){
+            }
+            switch(direct){
+
+                case 0:
+                    y-=speed;
+                    break;
+                case 1:
+                    x+=speed;
+                    break;
+                case 2:
+                    y+=speed;
+                    break;
+                case 3:
+                    x-=speed;
+                    break;
+            }
+            System.out.println("test: " +x +" "+y);
+            if(x>400 || y>300 || x<0 || y<0){
+                //this.isLive=false;
+                break;
+            }
+        }
+
     }
 }
 
