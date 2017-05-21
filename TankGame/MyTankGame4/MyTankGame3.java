@@ -225,5 +225,5 @@ class MyPanel3 extends JPanel implements KeyListener, Runnable {
         }
     }
 }
-
+ 
 
